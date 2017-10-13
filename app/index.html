@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting Hat</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Almendra+SC|Cinzel+Decorative" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body class="container">
+
+<h1 class="intro">Hello, Student! It's Time for Your Sorting.</h1>
+
+
+<div id="app" v-cloak>
+<div class="row justify-content-center sortingHatRow">
+<img class="sortingHat mx-auto img-fluid" src="http://orig13.deviantart.net/3b0f/f/2011/235/6/b/the_sorting_hat_by_sahinduezguen-d47mwt5.png">
+</div>
+<h2>Welcome to... </h2>
+<h1 class="house">{{ chosenHouse }}</span></h1>
+
+<div v-if="chosenHouse === 'Gryffindor'" class="houseDescription" >
+<div class="row houseRow">
+<div class="col-xs-4 crestCol1">
+<img class="houseCrest" src="https://vignette.wikia.nocookie.net/harrypotter/images/f/f2/Gryffindor%E2%84%A2_Crest.png/revision/latest?cb=20091129182119" class="mx-auto img-fluid">
+</div>
+<div class="col-xs-4 listCol">
+<ul>
+<li><span class="font-weight-bold text-uppercase">Values :</span> Bravery, Daring, Chivalry</li>
+<li><span class="font-weight-bold text-uppercase">Founder :</span> Godric Gryffindor</li>
+<li><span class="font-weight-bold text-uppercase">Mascot :</span> Lion</li>
+<li><span class="font-weight-bold text-uppercase">Colours :</span> Scarlet and Gold</li>
+<li><span class="font-weight-bold text-uppercase">Head Professor :</span> Minerva McGonagall</li>
+<li><span class="font-weight-bold text-uppercase">House Ghost :</span> Sir Nicholas de Mimsy-Porpington ("Nearly Headless Nick")</li>
+<li><span class="font-weight-bold text-uppercase">Element :</span> Fire</li>
+<li><span class="font-weight-bold text-uppercase">Famous Gryffindors :</span> Albus Dumbledore, Harry Potter, and Celestina Warbeck.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div v-else-if="chosenHouse === 'Hufflepuff'" class="houseDescription" >
+<div class="row houseRow">
+<div class="col-xs-4 crestCol1">
+<img class="houseCrest" src="https://i.pinimg.com/originals/a9/6e/2c/a96e2cf3e7cadf8003403b48da556276.png" class="mx-auto img-fluid">
+</div>
+<div class="col-xs-4 listCol">
+<ul>
+<li><span class="font-weight-bold text-uppercase">Values :</span> Hard Work, Patience, Loyalty</li>
+<li><span class="font-weight-bold text-uppercase">Founder :</span> Helga Hufflepuff</li>
+<li><span class="font-weight-bold text-uppercase">Mascot :</span> Badger</li>
+<li><span class="font-weight-bold text-uppercase">Colours :</span> Yellow and Black</li>
+<li><span class="font-weight-bold text-uppercase">Head Professor :</span> Pomona Sprout </li>
+<li><span class="font-weight-bold text-uppercase">House Ghost :</span> The Fat Friar </li>
+<li><span class="font-weight-bold text-uppercase">Element :</span> Earth </li>
+<li><span class="font-weight-bold text-uppercase">Famouse Hufflepuffs :</span> Hengist of Woodcroft (founder of Hogsmeade), Newt Scamander, and Artemisia Lufkin (first female minister for magic) </li>
+</ul>
+</div>
+</div>
+</div>
+
+<div v-else-if="chosenHouse === 'Ravenclaw'" class="houseDescription" >
+<div class="row houseRow">
+<div class="col-xs-4 crestCol1">
+<img class="houseCrest" src="http://vignette1.wikia.nocookie.net/harrypotter/images/6/6c/Ravenclaw%E2%84%A2_Crest_%28Painting%29.png/revision/latest?cb=20091129184403" class="mx-auto img-fluid">
+</div>
+<div class="col-xs-4 listCol">
+<ul>
+<li><span class="font-weight-bold text-uppercase">Values :</span> Intelligence, Knowledge, and Wit</li>
+<li><span class="font-weight-bold text-uppercase">Founder :</span> Rowena Ravenclaw</li>
+<li><span class="font-weight-bold text-uppercase">Mascot :</span> Eagle</li>
+<li><span class="font-weight-bold text-uppercase">Colours :</span> Blue and Bronze</li>
+<li><span class="font-weight-bold text-uppercase">Head Professor :</span> Filius Flitwick</li>
+<li><span class="font-weight-bold text-uppercase">House Ghost :</span> Grey Lady</li>
+<li><span class="font-weight-bold text-uppercase">Element :</span> Air</li>
+<li><span class="font-weight-bold text-uppercase">Famouse Ravenclaws :</span> Gilderoy Lockheart, Ignatia Wildsmith (inventor of floo powder), and Garrick Ollivander</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div v-else-if="chosenHouse ==='Slytherin'" class="houseDescription" >
+<div class="row houseRow">
+<div class="col-xs-4 crestCol1">
+<img class="houseCrest" src="http://img3.wikia.nocookie.net/__cb20091129190321/harrypotter/images/e/ef/Slytherin%E2%84%A2_Crest_(Painting).png" class="mx-auto img-fluid">
+</div>
+<div class="col-xs-4 listCol" style="padding-left:4%">
+<ul>
+<li><span class="font-weight-bold text-uppercase">Values : </span>Ambition, Cunning and Resourcefulness</li>
+<li><span class="font-weight-bold text-uppercase">Founder :</span> Salazar Slytherin</li>
+<li><span class="font-weight-bold text-uppercase">Mascot : </span>Serpent</li>
+<li><span class="font-weight-bold text-uppercase">Colours : </span>Emerald Green and Silver</li>
+<li><span class="font-weight-bold text-uppercase">Head Professor :</span> Horace Slughorn</li>
+<li><span class="font-weight-bold text-uppercase">House Ghost :</span> The Bloody Baron</li>
+<li><span class="font-weight-bold text-uppercase">Element :</span> Water</li>
+<li><span class="font-weight-bold text-uppercase">Famouse Slytherins :</span> Merlin, Tom Riddle, and Dolores Umbridge</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
