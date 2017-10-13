@@ -15,13 +15,40 @@
 
 
 <div id="app" v-cloak>
+
+
 <div class="row justify-content-center sortingHatRow">
+<div class="col">
 <img class="sortingHat mx-auto img-fluid" src="http://orig13.deviantart.net/3b0f/f/2011/235/6/b/the_sorting_hat_by_sahinduezguen-d47mwt5.png">
 </div>
-<h2>Welcome to... </h2>
-<h1 class="house">{{ chosenHouse }}</span></h1>
+<div class="col sortingHatDialogue">
 
-<div v-if="chosenHouse === 'Gryffindor'" class="houseDescription" >
+<div v-if="buttonClicked === 'no'">But where to put you? ... <button class="btn btn-secondary" v-on:click = "sortBegins">Get Sorted</button></div>
+
+<div v-else-if="buttonClicked === 'yes'"><h3>{{ currentQuestion }}</h3>
+<ol class="answerList"><li v-for="(answer, index) in questions[questionNum].answers" class="answerListItem">{{ answer.text }}<button class="btn btn-secondary answerButton" v-on:click = "answerQuestion(index)">&#10004;</button></li>
+</ol></div>
+
+<div v-else-if="buttonClicked === 'sorting'">Hmmmm.... But where to put you? ....</div>
+
+<div v-else><p>Better be... </p>
+<h1 class="house">{{ sortedHouse }}</h1>
+<p style="font-size:70%">Scroll down to learn more about your house...</p>
+<button class="btn btn-secondary" v-on:click="reset">Sort Again</button>
+</div>
+
+</div>
+</div>
+
+<!-- <div class="row justify-content-center sortingHatRow">
+<img class="sortingHat mx-auto img-fluid" src="http://orig13.deviantart.net/3b0f/f/2011/235/6/b/the_sorting_hat_by_sahinduezguen-d47mwt5.png">
+</div> -->
+
+
+<!-- <h2>Welcome to... </h2> -->
+<!-- <h1 class="house">{{ chosenHouse }}</span></h1> -->
+
+<div v-if="sortedHouse === 'Gryffindor'" class="houseDescription" >
 <div class="row houseRow">
 <div class="col-xs-4 crestCol1">
 <img class="houseCrest" src="https://vignette.wikia.nocookie.net/harrypotter/images/f/f2/Gryffindor%E2%84%A2_Crest.png/revision/latest?cb=20091129182119" class="mx-auto img-fluid">
@@ -41,7 +68,7 @@
 </div>
 </div>
 
-<div v-else-if="chosenHouse === 'Hufflepuff'" class="houseDescription" >
+<div v-else-if="sortedHouse === 'Hufflepuff'" class="houseDescription" >
 <div class="row houseRow">
 <div class="col-xs-4 crestCol1">
 <img class="houseCrest" src="https://i.pinimg.com/originals/a9/6e/2c/a96e2cf3e7cadf8003403b48da556276.png" class="mx-auto img-fluid">
@@ -61,7 +88,7 @@
 </div>
 </div>
 
-<div v-else-if="chosenHouse === 'Ravenclaw'" class="houseDescription" >
+<div v-else-if="sortedHouse === 'Ravenclaw'" class="houseDescription" >
 <div class="row houseRow">
 <div class="col-xs-4 crestCol1">
 <img class="houseCrest" src="http://vignette1.wikia.nocookie.net/harrypotter/images/6/6c/Ravenclaw%E2%84%A2_Crest_%28Painting%29.png/revision/latest?cb=20091129184403" class="mx-auto img-fluid">
@@ -81,7 +108,7 @@
 </div>
 </div>
 
-<div v-else-if="chosenHouse ==='Slytherin'" class="houseDescription" >
+<div v-else-if="sortedHouse ==='Slytherin'" class="houseDescription" >
 <div class="row houseRow">
 <div class="col-xs-4 crestCol1">
 <img class="houseCrest" src="http://img3.wikia.nocookie.net/__cb20091129190321/harrypotter/images/e/ef/Slytherin%E2%84%A2_Crest_(Painting).png" class="mx-auto img-fluid">

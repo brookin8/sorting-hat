@@ -15,14 +15,66 @@ body{
 
 }
 
+.sortingHatDialogue {
+	vertical-align:middle;
+	text-align:center;
+	font-family: 'Cinzel Decorative', cursive;
+	font-size:150%;
+}
+
 .sortingHatRow {
 	margin-bottom:5%;
+
+  	display: flex;
+  	align-items: center;
 }
 
 h2 {
 	text-align: center;
 	font-family: 'Cinzel Decorative', cursive;
+	margin-top:10%;
 
+}
+
+h3 {
+	text-align:left;
+}
+
+.btn {
+	background-color:#342847;
+	color:#F9FCF8;
+}
+
+.answerList {
+	text-align:left;
+	list-style:lower-alpha;
+	
+}
+ 
+.answerListItem {
+	font-size:70%;
+	margin-top:1%;
+	margin-bottom:1%;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.answerButton {
+	background-color:transparent;
+	text-align:left;
+	margin-left:4%;
+	font-size: 60%;
+	background-color:#342847;
+	color:#F9FCF8;
+	padding-top:1%;
+	padding-bottom:1%;
+	padding-left:2%;
+	padding-right:2%;
+}
+
+.font-weight-bold {
+	font-weight:900;
+	color:#342847;
 }
 
 .house {
