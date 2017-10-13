@@ -64,7 +64,7 @@ var menu = new Vue ({
 				},
 				{
 					letter : 'r',
-					text: 'Go for an easy two pointer, and fight it out in overtime'
+					text: 'Go for an easy two pointer, and fight it out in overtime.'
 				},
 								{
 					letter : 'h',
@@ -81,19 +81,19 @@ var menu = new Vue ({
 				answers : [
 				{
 					letter : 'r',
-					text: "Many episodes of 'This American Life' or 'Hardcore History'"
+					text: "Many episodes of 'This American Life' or 'Hardcore History'."
 				},
 				{
 					letter : 'g',
-					text: "Listening to whatever's popular on the radio"
+					text: "Listening to whatever's popular on the radio."
 				},
 				{
 					letter : 's',
-					text: "Plotting"
+					text: "Plotting."
 				},
 				{
 					letter : 'h',
-					text: "Talking to my friends, or friendly strangers"
+					text: "Talking to my friends, or friendly strangers."
 				}
 				]	
 			},
