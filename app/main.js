@@ -21,7 +21,7 @@ var menu = new Vue ({
 				},
 				{
 					letter : 'h',
-					text: "I personally don't like it, but it's cool if people use it."
+					text: "I personally don't use it, but it's cool if you do!"
 				},
 				{
 					letter : 'g',
@@ -29,7 +29,7 @@ var menu = new Vue ({
 				},
 				{
 					letter : 'r',
-					text: 'No opinion. Although how do you feel about asking dumb questions?'
+					text: 'No opinion. Why would you ask that?'
 				}
 				]	
 			},
@@ -55,7 +55,7 @@ var menu = new Vue ({
 				]	
 			},
 			{
-				question: "It's down to the last 5 seconds in a basketball game. Your team's down by 2, and you have the ball. What do you do?",
+				question: "Your team is down by 2, with 5 seconds to go in a basketball game. You have the ball. What do you do?",
 				answers : [
 				
 				{
@@ -81,7 +81,7 @@ var menu = new Vue ({
 				answers : [
 				{
 					letter : 'r',
-					text: "Many episodes of 'This American Life' or 'Hardcore History'."
+					text: "Many episodes of 'This American Life'."
 				},
 				{
 					letter : 'g',

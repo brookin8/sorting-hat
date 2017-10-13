@@ -47,7 +47,7 @@ h3 {
 
 .answerList {
 	text-align:left;
-	list-style:lower-alpha;
+	list-style:none;
 	
 }
  
@@ -59,10 +59,12 @@ h3 {
 
 }
 
+.answerText {
+	display:inline;
+}
 .answerButton {
 	background-color:transparent;
 	text-align:left;
-	margin-left:4%;
 	font-size: 60%;
 	background-color:#342847;
 	color:#F9FCF8;
@@ -70,6 +72,8 @@ h3 {
 	padding-bottom:1%;
 	padding-left:2%;
 	padding-right:2%;
+	display:inline-block;
+	float:left;
 }
 
 .font-weight-bold {

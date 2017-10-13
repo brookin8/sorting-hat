@@ -26,7 +26,7 @@
 <div v-if="buttonClicked === 'no'">But where to put you? ... <button class="btn btn-secondary" v-on:click = "sortBegins">Get Sorted</button></div>
 
 <div v-else-if="buttonClicked === 'yes'"><h3>{{ currentQuestion }}</h3>
-<ol class="answerList"><li v-for="(answer, index) in questions[questionNum].answers" class="answerListItem">{{ answer.text }}<button class="btn btn-secondary answerButton" v-on:click = "answerQuestion(index)">&#10004;</button></li>
+<ol class="answerList"><li v-for="(answer, index) in questions[questionNum].answers" class="answerListItem"><button class="btn btn-secondary answerButton" v-on:click = "answerQuestion(index)">&#10004;</button>{{ answer.text }}</li>
 </ol></div>
 
 <div v-else-if="buttonClicked === 'sorting'">Hmmmm.... But where to put you? ....</div>
