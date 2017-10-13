@@ -60,7 +60,7 @@ var menu = new Vue ({
 				
 				{
 					letter : 's',
-					text: "We wouldn't be down by 2. I would have already paid the refs and ensured the other team's best player was out."
+					text: "We wouldn't be down. I would have already paid the refs, and had my teammate Grayson Allen trip the other team's star player."
 				},
 				{
 					letter : 'r',
