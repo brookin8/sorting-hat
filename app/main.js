@@ -1,3 +1,11 @@
+Vue.component('houseInfo', {
+	//The name of the prop does NOT have to the same as it's corresponding data element. It just has to be
+	//the same as what's used in template. You just have to connect the two in v-bind. 
+	template: '<div class="col-xs-4 listCol"><ul><li><span class="font-weight-bold text-uppercase">Values :</span> {{ values }}</li><li><span class="font-weight-bold text-uppercase">Founder :</span> {{ founder }}</li><li><span class="font-weight-bold text-uppercase">Mascot :</span> {{ mascot }}</li><li><span class="font-weight-bold text-uppercase">Colours :</span> {{ colours }}</li><li><span class="font-weight-bold text-uppercase">Element :</span> {{ element }}</li><li><span class="font-weight-bold text-uppercase">Famous Alumni :</span> {{ alumni }}</li></ul></div>',
+	props : ['values','founder','mascot','colours','element','alumni']
+})
+
+
 var menu = new Vue ({
 	
 	el : '#app',
@@ -7,10 +15,45 @@ var menu = new Vue ({
 		// houses: ['Gryffindor','Slytherin','Hufflepuff','Ravenclaw'],
 		// chosenHouse : '',
 		sortedHouse : '',
+		sortedHouseIndex : 0,
 		buttonClicked : 'no',
 		questionNum : 0,
 		currentQuestion : '',
 		answersReceived : [],
+		houses : [ 
+			{
+			values : 'Bravery, Daring, Chivalry',
+			founder : 'Godric Gryffindor',
+			mascot : 'Lion',
+			colours : 'Scarlet and Gold',
+			element : 'Fire',
+			alumni : 'Albus Dumbledore, Harry Potter, and Celestina Warbeck'
+			},
+			{
+			values : 'Intelligence, Knowledge, Wit',
+			founder : 'Rowena Ravenclaw',
+			mascot : 'Eagle',
+			colours : 'Blue and Bronze',
+			element : 'Air',
+			alumni : 'Gilderoy Lockheart, Ignatia Wildsmith (inventor of floo powder), and Garrick Ollivander'
+			},
+			{
+			values : 'Hard Work, Patience, Loyalty',
+			founder : 'Helga Hufflepuff',
+			mascot : 'Badger',
+			colours : 'Yellow and Black',
+			element : 'Earth',
+			alumni : 'Hengist of Woodcroft (founder of Hogsmeade), Newt Scamander, and Artemisia Lufkin (first female minister for magic)'
+			},
+			{
+			values : 'Ambition, Cunning and Resourcefulness',
+			founder : 'Salazar Slytherin',
+			mascot : 'Serpent',
+			colours : 'Emerald Green and Silver',
+			element : 'Water',
+			alumni : 'Merlin, Tom Riddle, and Dolores Umbridge'
+			}
+		],
 		questions : [
 			{
 				question: 'How do you feel about hair gel?',
@@ -172,12 +215,16 @@ var menu = new Vue ({
 
 		if (numG > numS && numG > numH && numG > numR) {
 			this.sortedHouse = 'Gryffindor';
+			this.sortedHouseIndex = 0;
 		} else if (numS >numG && numS > numH && numS > numR ) {
 			this.sortedHouse = 'Slytherin';
+			this.sortedHouseIndex = 3;
 		} else if (numR >numG && numR > numH && numR > numS ) {
 			this.sortedHouse = 'Ravenclaw';
+			this.sortedHouseIndex = 1;
 		} else {
 			this.sortedHouse = 'Hufflepuff';
+			this.sortedHouseIndex = 2;
 		}
 
 		console.log(this.sortedHouse);
@@ -198,6 +245,7 @@ var menu = new Vue ({
 		},
 
 		answerQuestion : function(index) {
+			console.log(this.houses[0].Values);
 		
 			if(this.questionNum <=3) {	
 				var answerStore = this.questions[this.questionNum].answers[index].letter;
